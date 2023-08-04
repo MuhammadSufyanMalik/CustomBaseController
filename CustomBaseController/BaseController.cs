@@ -29,7 +29,7 @@ namespace CustomBaseController
         protected string GetLanguage()
         {
             string text = "";
-            return (string?)base.Request.Headers["lng"];
+            return (string?)base.Request.Headers["lng"] == null ? (string?)base.Request.Headers["Accept-Language"] : string.Empty;
         }
 
         protected int GetUserId()
